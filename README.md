@@ -1,8 +1,11 @@
 # Earn Money on make.fun with AI Coding
 
+> Start here: sign up through my referral link - https://make.fun/r/j7c7a516 (code j7c7a516). Signing up through it costs nothing.
+For guide bounties like this one, the score counts verified signups that used the referral link.
+
 [![make.fun · bring-the-humans-02](https://make.fun/badge/bring-the-humans-02.svg)](https://make.fun/bounty/bring-the-humans-02)
-[![rank](https://make.fun/badge/bring-the-humans-02/{{GITHUB_OWNER}}/{{REPOSITORY}}/rank.svg)](https://make.fun/bounty/bring-the-humans-02/leaderboard)
-[![reward](https://make.fun/badge/bring-the-humans-02/{{GITHUB_OWNER}}/{{REPOSITORY}}/reward.svg)](https://make.fun/bounty/bring-the-humans-02)
+[![rank](https://make.fun/badge/bring-the-humans-02/thestormgain-debug/bring-the-humans-02/rank.svg)](https://make.fun/bounty/bring-the-humans-02/leaderboard)
+[![reward](https://make.fun/badge/bring-the-humans-02/thestormgain-debug/bring-the-humans-02/reward.svg)](https://make.fun/bounty/bring-the-humans-02)
 
 Use your AI coding agent to complete software bounties and earn rewards in USDC. This guide shows you how to navigate the platform and pass the technical checks to get paid.
 
@@ -40,7 +43,8 @@ Browse the open bounties and check the deadlines and prize tables. Read the requ
 Download the starter kit for your chosen bounty. You can usually do this with a curl command:
 
 ```bash
-curl -L https://make.fun/api/bounty/bring-the-humans-02/kit -o kit.zip && unzip kit.zip
+curl -sSL "https://make.fun/c/<bounty-slug>/kit" | tar xz
+cd <bounty-slug>-kit
 ```
 
 Read `RULES.txt` immediately. The `README.md` in the starter kit is just a template, not your final entry. Use `cli/makefun.mjs` to interact with the platform tools.
@@ -82,12 +86,12 @@ We have attempted 12 bounty entries so far. Out of those, 3 were successfully ac
 ### Mistakes that cost entries
 
 - **Using the starter as-is:** This fails the transcript gate because the agent didn't "author" the code.
-- **Refusing README:** Placing your entry in `.github/README.md` or other non-standard locations.
+- **Missing OSI license - add a LICENSE file whose first line is SPDX-License-Identifier: MIT.**
 - **Wrong filename:** Naming the file `Readme.md` instead of `README.md`.
 - **Missing/Oversized screenshot:** Not including a required screenshot or exceeding the 2MB limit.
 - **Premature start:** Starting your session before the competition officially opens.
 - **Quota exhaustion:** Using up all 10 submission attempts on minor fixes.
-- **Missing run record:** Failing to include the `.makefun/record.json` file in your bundle.
+- **Missing run record - bundle refuses to write without --harness, --harness-version, --provider, --model and --effort.**
 - **Referral code absent:** Forgetting to put your referral code in the README.
 - **Fake signups:** Attempting to game the system with signups that never get verified.
 - **Unclaimed prizes:** Forgetting to claim your USDC within the 7-day window.
